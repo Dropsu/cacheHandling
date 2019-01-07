@@ -1,7 +1,7 @@
 package ds.recommendationengine.redisstuff.redisclient;
 
 
-import ds.recommendationengine.model.UserProfile;
+import ds.model.UserProfile;
 import ds.recommendationengine.redisstuff.redisrepositories.UserProfileRedisRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,16 +27,16 @@ public class RedisCheckClient {
     }
 
     public UserProfile getUserProfile(String userId){
-        logger.debug("Requesting UserProfile with id: {}", userId);
+        logger.info("Requesting UserProfile with id: {} from cache", userId);
 
         UserProfile usr = checkRedisCache(userId);
 
         if (usr!=null){
-            logger.debug("I have successfully retrieved an user profile {} from the redis cache: {}", userId, usr);
+            logger.info("I have successfully retrieved an user profile {} from the redis cache: {}", userId, usr);
             return usr;
         }
 
-        logger.debug("Unable to locate user profile from the redis cache: {}.", userId);
+        logger.info("Unable to locate user profile from the redis cache: {}.", userId);
         return null;
     }
 

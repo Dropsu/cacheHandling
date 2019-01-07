@@ -1,6 +1,6 @@
 package ds.profileserver.redisstuff.redisrepositories;
 
-import ds.profileserver.model.UserProfile;
+import ds.model.UserProfile;
 
 public interface UserProfileRedisRepository {
 

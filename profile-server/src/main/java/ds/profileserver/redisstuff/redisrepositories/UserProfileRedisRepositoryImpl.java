@@ -1,6 +1,6 @@
 package ds.profileserver.redisstuff.redisrepositories;
 
-import ds.profileserver.model.UserProfile;
+import ds.model.UserProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;

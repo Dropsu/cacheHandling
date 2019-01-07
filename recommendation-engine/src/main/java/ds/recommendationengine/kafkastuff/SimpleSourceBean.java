@@ -20,7 +20,7 @@ public class SimpleSourceBean {
     }
 
     public void publishUserProfileRequest(String action, String usrId){
-            logger.debug("Sending Kafka message {} requesting for User Id: {}", action, usrId);
+            logger.info("Sending Kafka message {} requesting for User Id: {}", action, usrId);
 
             UserProfileUpdateModel change = new UserProfileUpdateModel(
                     UserProfileUpdateModel.class.getTypeName(),

@@ -6,24 +6,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceConfig {
 
-  @Value("${example.property}")
-  private String exampleProperty="";
 
-  @Value("${redis.server}")
-  private String redisServer="";
+  private static String redisServer="localhost";
 
-  @Value("${redis.port}")
-  private String redisPort="";
+  private static String redisPort="6379";
 
-  public String getExampleProperty(){
-    return exampleProperty;
-  }
-
-  public String getRedisServer(){
+  public static String getRedisServer(){
     return redisServer;
   }
 
-  public Integer getRedisPort(){
+  public static Integer getRedisPort(){
     return Integer.parseInt( redisPort );
   }
 

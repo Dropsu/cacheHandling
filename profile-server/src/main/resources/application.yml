@@ -8,3 +8,6 @@ spring:
           destination: userProfileChangeTopic
           content-type: application/json
           group: profileServersGroup
+
+server:
+  port: 8081

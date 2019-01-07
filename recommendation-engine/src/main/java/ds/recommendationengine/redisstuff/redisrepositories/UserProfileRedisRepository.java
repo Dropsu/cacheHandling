@@ -1,7 +1,7 @@
 package ds.recommendationengine.redisstuff.redisrepositories;
 
 
-import ds.recommendationengine.model.UserProfile;
+import ds.model.UserProfile;
 
 public interface UserProfileRedisRepository {
 
