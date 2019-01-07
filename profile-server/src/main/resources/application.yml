@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: licensingservice
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: userProfileChangeTopic
+          content-type: application/json
+          group: profileServersGroup
