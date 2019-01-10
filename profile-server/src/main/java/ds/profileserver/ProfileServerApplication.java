@@ -28,6 +28,7 @@ public class ProfileServerApplication {
     private RedisSaveClient redisSaveClient;
 
     //KAFKA STUFF:
+
     @StreamListener(Sink.INPUT)
     public void loggerSink(UserProfileUpdateModel userProfileUpdateModel){
         String id = userProfileUpdateModel.getUserId();
@@ -54,7 +55,7 @@ public class ProfileServerApplication {
     }
 
     private void handleUserProfileRequest (String id){
-        final int waitTimeInSec = 10;
+        final int waitTimeInSec = 6;
         timeOut(waitTimeInSec);
 
         UserProfile mockedUpRetrievedUser = new UserProfile(id,new String[]{"7","7","7","7","7"});

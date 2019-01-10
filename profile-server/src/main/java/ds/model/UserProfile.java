@@ -1,11 +1,19 @@
 package ds.model;
 
+import org.springframework.data.cassandra.core.mapping.Column;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
+
 import java.io.Serializable;
 import java.util.Arrays;
 
+@Table
 public class UserProfile implements Serializable {
 
+    @PrimaryKey
     private String id;
+
+    @Column
     private String [] movieRatings;
 
     public UserProfile(String id, String[] movieRatings) {

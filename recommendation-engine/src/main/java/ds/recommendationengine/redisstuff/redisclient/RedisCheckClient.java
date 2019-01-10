@@ -16,15 +16,6 @@ public class RedisCheckClient {
 
     private static final Logger logger = LoggerFactory.getLogger(RedisCheckClient.class);
 
-    private UserProfile checkRedisCache(String userId) {
-        try {
-            return userProfileRedisRepository.findUserProfile(userId);
-        }
-        catch (Exception ex){
-            logger.error("Error encountered while trying to retrieve user profile {} check Redis Cache.  Exception {}", userId, ex);
-            return null;
-        }
-    }
 
     public UserProfile getUserProfile(String userId){
         logger.info("Requesting UserProfile with id: {} from cache", userId);
@@ -40,5 +31,14 @@ public class RedisCheckClient {
         return null;
     }
 
+    private UserProfile checkRedisCache(String userId) {
+        try {
+            return userProfileRedisRepository.findUserProfile(userId);
+        }
+        catch (Exception ex){
+            logger.error("Error encountered while trying to retrieve user profile {} check Redis Cache.  Exception {}", userId, ex);
+            return null;
+        }
+    }
 
 }

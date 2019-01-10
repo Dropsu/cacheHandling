@@ -23,7 +23,7 @@ public class UserProfileController {
     private UserProfileService userProfileService;
 
     @Autowired
-    private RedisCheckClient redisCheckClient;
+    private RedisCheckClient reredisCheckClient;
 
     @GetMapping("/requestUserProfile/{id}")
     public ResponseEntity sendMessage(@PathVariable String id){
@@ -51,7 +51,7 @@ public class UserProfileController {
 
     private ResponseEntity fetchProfileFromCache (String id){
         logger.info("Fetching user profile with id {}",id);
-        UserProfile retrievedUser= redisCheckClient.getUserProfile(id);
+        UserProfile retrievedUser = redisCheckClient.getUserProfile(id);
         return ResponseEntity.status(HttpStatus.OK).body("RETRIEVED user profile: "+retrievedUser+" from cache");
     }
 
